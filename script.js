@@ -163,23 +163,3 @@ topBtn.onclick = () => {
     });
 
 };
-
-/* =========================================
-     VISITOR COUNT
-========================================= */
-
-function updateVisitorCount() {
-    const el = document.getElementById('visitor-count');
-    if (!el) return;
-
-    fetch('https://api.countapi.xyz/hit/trishuli-portfolio/visits')
-        .then(res => res.json())
-        .then(data => {
-            el.textContent = data.value;
-        })
-        .catch(() => {
-            el.textContent = '—';
-        });
-}
-
-document.addEventListener('DOMContentLoaded', updateVisitorCount);
